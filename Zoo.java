@@ -106,9 +106,10 @@ class Zoo implements AnimalSearch {
 
     // Observer pattern implementation
     private void notifySup(Animal animal, Supervisor oldSup, Supervisor newSup) {
-        for (Supervisor supervisor : observers) {
-            supervisor.update(animal, oldSup, newSup);
-        }
+        String logEntry = "Animal with ID: " + animal.getAnId()
+                + " changed from supervisor " + (oldSup != null ? oldSup.getName() : "none")
+                + " to supervisor " + newSup.getName();
+        System.out.println(logEntry);
     }
 
     // Method to add a supervisor

@@ -22,18 +22,8 @@ public class Supervisor {
         return ++amount;
     }
 
-    public void update(Animal animal, Supervisor oldSup, Supervisor newSup) {
-        String logEntry = "Animal with ID: " + animal.getAnId()
-                + " changed from supervisor " + (oldSup != null ? oldSup.getName() : "none")
-                + " to supervisor " + newSup.getName();
-        System.out.println(logEntry);
-    }
 }
 
-interface SupervisorChangeObserver {
-
-    void update(Animal animal, Supervisor oldSup, Supervisor newSup);
-}
 
 interface SupervisorAssignment {
 

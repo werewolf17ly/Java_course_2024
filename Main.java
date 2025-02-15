@@ -31,6 +31,8 @@ public class Main {
         // Create supervisors
         Supervisor supervisor1 = new Supervisor("Alice");
         Supervisor supervisor2 = new Supervisor("Bob");
+        zoo.addObserver(supervisor1);
+        zoo.addObserver(supervisor2);
 
         // Assign supervisors to animals
         zoo.assignSupToAn(supervisor1, cat.getAnId());
@@ -64,8 +66,6 @@ public class Main {
         }
 
         // Add another supervisor to an animal with a supervisor
-        zoo.addObserver(supervisor1);
-        zoo.addObserver(supervisor2);
         zoo.assignSupToAn(supervisor2, horse.getAnId());
 
         // Assign the same supervisor to the same animal (should work)
